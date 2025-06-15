@@ -28,7 +28,8 @@ function App() {
     setResult(null);
 
     try {
-      const response = await fetch("http://localhost:5001/analyze", {
+      const response = await fetch("https://resume-analyzer-backend-sqww.onrender.com/analyze", {
+
         method: "POST",
         body: formData,
       });
