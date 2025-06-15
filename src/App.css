@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+/* 🌟 Light Theme Base */
+body {
+  background: #f7f9fb;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h3, h4 {
+  color: #343a40;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.result-section {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ul.list-group {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* 🔥 Popping Gradient Button */
+.btn-gradient {
+  background: linear-gradient(45deg, #d4145a, #fbb03b);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover,
+.btn-gradient:focus {
+  background: linear-gradient(45deg, #fbb03b, #d4145a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌙 Dark Mode Styles */
+.bg-dark {
+  background-color: #121212 !important;
+}
+
+.bg-dark h1,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark label,
+.bg-dark p,
+.bg-dark li {
+  color: #f8f9fa;
+}
+
+.bg-dark .result-section {
+  background: #1e1e1e;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.bg-dark textarea,
+.bg-dark input {
+  background: #2a2a2a;
+  color: #f8f9fa;
+  border: 1px solid #444;
+}
+
+.bg-dark .progress {
+  background-color: #2a2a2a;
+}
+
+/* Smooth transitions for toggling themes */
+body,
+.bg-dark,
+.bg-light {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 📱 Mobile Responsive Tweaks */
+@media (max-width: 576px) {
+  .container {
+    padding: 1rem;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  button {
+    width: 100% !important;
   }
 }
